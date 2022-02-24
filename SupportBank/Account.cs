@@ -8,5 +8,10 @@ namespace SupportBank
         {
             Name = name;
         }
+
+        public override string ToString()
+        {
+            return $"Account: {Name}";
+        }
     }
 }

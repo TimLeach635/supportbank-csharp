@@ -3,12 +3,12 @@ namespace SupportBank
     public class Transaction
     {
         public DateTime Date { get; set; }
-        public string From { get; set; }
-        public string To { get; set; }
+        public Account From { get; set; }
+        public Account To { get; set; }
         public string Narrative { get; set; }
         public decimal Amount { get; set; }
 
-        public Transaction(DateTime date, string from, string to, string narrative, decimal amount)
+        public Transaction(DateTime date, Account from, Account to, string narrative, decimal amount)
         {
             Date = date;
             From = from;
@@ -19,7 +19,7 @@ namespace SupportBank
 
         public override string ToString()
         {
-            return $"{Date}: £{Amount} from {From} to {To} for {Narrative}";
+            return $"{Date}: £{Amount} from {From.Name} to {To.Name} for {Narrative}";
         }
     }
 }
